@@ -73,6 +73,43 @@
         border-radius: 10px;
         padding: 20px;
     }
+	
+	.app-card .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+	}
+
+	/* Base button styles applied only to your button classes */
+	.app-card .links a.btn-primary,
+	.app-card .links a.btn-secondary {
+		display: inline-block;
+		padding: 8px 16px;
+		color: #ffffff;
+		text-decoration: none;
+		border-radius: 4px;
+		text-align: center;
+		transition: background-color 0.2s ease;
+	}
+
+	/* Primary buttons (Green) */
+	.app-card .links a.btn-primary {
+		background-color: #28a745;
+	}
+
+	.app-card .links a.btn-primary:hover {
+		background-color: #218838;
+	}
+
+	/* Secondary button (Gray) */
+	.app-card .links a.btn-secondary {
+		background-color: #6666FF;
+	}
+
+	.app-card .links a.btn-secondary:hover {
+		background-color: #4444FF;
+	}
 </style>
 </head>
 <body>
@@ -94,8 +131,8 @@ A collection of interactive tools and prototype applications for <a href="https:
                 Identify and visualize cell type-specific gene expression changes across AD pseudo-progression in MTG.
             </p>
             <div class="links">
-				<a href="https://sea-ad.shinyapps.io/ad_gene_trajectories/">Launch App</a>
-				<a href="https://github.com/jeremymiller/SEA-AD-shiny-app">GitHub</a>
+				<a href="https://sea-ad.shinyapps.io/ad_gene_trajectories/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/jeremymiller/SEA-AD-shiny-app" class="btn-primary">GitHub</a>
 			</div>
         </div>
 
@@ -106,11 +143,11 @@ A collection of interactive tools and prototype applications for <a href="https:
 				Explore gene expression patterns in multi-region single cell data in the context of cell types, brain regions, and disease progression.
 			</p>
 			<div class="links">
-				<a href="https://sea-ad.shinyapps.io/multiregion_gene_exploration/">Launch App</a>
-				<a href="https://github.com/AllenInstitute/seaad_multiregion_trajectory_viewer/">GitHub</a>
+				<a href="https://sea-ad.shinyapps.io/multiregion_gene_exploration/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/AllenInstitute/seaad_multiregion_trajectory_viewer/" class="btn-primary">GitHub</a>
 			</div>
 			<div class="links">
-				<a href="https://github.com/AllenInstitute/mouse-developing-vis-app" class="btn-secondary">Related app: developing mouse visual cortex</a>
+				<a href="https://github.com/AllenInstitute/mouse-developing-vis-app" class="btn-secondary">Related app: developing mouse VIS</a>
 			</div>
 		</div>
 
@@ -121,8 +158,8 @@ A collection of interactive tools and prototype applications for <a href="https:
                 Explore neuropathology images and associated measurements from multiple brain region in SEA-AD donors.
             </p>
             <div class="links">
-				<a href="https://molgen-shiny.org/seaad_np_viewer/">Launch App</a>
-				<a href="https://github.com/AllenInstitute/seaad-neuropath-shiny">GitHub</a>
+				<a href="https://molgen-shiny.org/seaad_np_viewer/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/AllenInstitute/seaad-neuropath-shiny" class="btn-primary">GitHub</a>
 			</div>
         </div>
 		
@@ -133,8 +170,8 @@ A collection of interactive tools and prototype applications for <a href="https:
                 Compare cell type annotations between SEA-AD and ten community studies of AD or user data from <a href="https://brain-map.org/bkp/analyze/mapmycells">MapMyCells</a>.
             </p>
             <div class="links">
-				<a href="https://sea-ad.shinyapps.io/ACEapp/">Launch App</a>
-				<a href="https://github.com/AllenInstitute/ACE/">GitHub</a>
+				<a href="https://sea-ad.shinyapps.io/ACEapp/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/AllenInstitute/ACE/" class="btn-primary">GitHub</a>
 			</div>
         </div>
 
@@ -145,8 +182,8 @@ A collection of interactive tools and prototype applications for <a href="https:
                 Identify genes of potential biological interest in multiple cell type taxonomies (including SEA-AD MTG).
             </p>
             <div class="links">
-				<a href="https://molgen-shiny.org/CHARGE/">Launch App</a>
-				<a href="https://github.com/AllenInstitute/CHARGE/">GitHub</a>
+				<a href="https://molgen-shiny.org/CHARGE/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/AllenInstitute/CHARGE/" class="btn-primary">GitHub</a>
 			</div>
         </div>
 
@@ -157,8 +194,8 @@ A collection of interactive tools and prototype applications for <a href="https:
                 Explore patterns of gene expression in the brain across multiple Allen Brain Atlases (including SEA-AD).
             </p>
             <div class="links">
-				<a href="https://sea-ad.shinyapps.io/Gene_Knowledge_Cards/">Launch App</a>
-				<a href="https://github.com/AllenInstitute/gene_knowledge_cards_shinyapp">GitHub</a>
+				<a href="https://sea-ad.shinyapps.io/Gene_Knowledge_Cards/" class="btn-primary">Launch App</a>
+				<a href="https://github.com/AllenInstitute/gene_knowledge_cards_shinyapp" class="btn-primary">GitHub</a>
 			</div>
         </div>
 
