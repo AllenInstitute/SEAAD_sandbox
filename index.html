@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<base target="_blank">
-
-<title>SEA-AD Sandbox</title>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 30px;
-        line-height: 1.6;
-        color: #333;
-    }
-
-    h1 {
-        color: #1a1a1a;
-        margin-bottom: 10px;
-    }
-
-    .subtitle {
-        margin-bottom: 30px;
-        color: #666;
-    }
-
-    .section {
-        margin-bottom: 50px;
-    }
-
-    .app-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 24px;
-    }
-
-    .app-card {
-        border: 1px solid #e0e0e0;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .app-icon {
-        width: 64px;
-        height: 64px;
-        object-fit: contain;
-        margin-bottom: 12px;
-    }
-
-    .app-card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .links a {
-        margin-right: 15px;
-        text-decoration: none;
-        color: #0066cc;
-        font-weight: 600;
-    }
-
-    .links a:hover {
-        text-decoration: underline;
-    }
-
-    .cta {
-        background-color: #f5f7fa;
-        border-radius: 10px;
-        padding: 20px;
-    }
-	
-	.app-card .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 8px;
-	}
-
-	/* Base button styles applied only to your button classes */
-	.app-card .links a.btn-primary,
-	.app-card .links a.btn-secondary {
-		display: inline-block;
-		padding: 8px 16px;
-		color: #ffffff;
-		text-decoration: none;
-		border-radius: 4px;
-		text-align: center;
-		transition: background-color 0.2s ease;
-	}
-
-	/* Primary buttons (Green) */
-	.app-card .links a.btn-primary {
-		background-color: #28a745;
-	}
-
-	.app-card .links a.btn-primary:hover {
-		background-color: #218838;
-	}
-
-	/* Secondary button (Gray) */
-	.app-card .links a.btn-secondary {
-		background-color: #6666FF;
-	}
-
-	.app-card .links a.btn-secondary:hover {
-		background-color: #4444FF;
-	}
-</style>
-</head>
-<body>
-
-<h1>SEA-AD Sandbox</h1>
-
-<p class="subtitle">
-A collection of interactive tools and prototype applications for <a href="https://brain-map.org/consortia/sea-ad/">the Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD)</a>. These applications provide access to gene expression, cell type, trajectory, neuropathology, and annotation exploration resources.
-
-<div class="section">
-
-    <div class="app-grid">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <base target="_blank"/>
+  <title>
+   SEA-AD Sandbox
+  </title>
+  <link href="icons/SEAAD.ico" rel="icon" type="image/x-icon"/>
+  <style>
+   :root { --header-h: 72px; --sidebar-w: 230px; --navy: #111a2b; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 22px); }
+  body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #fff; }
+  .site-header { position: fixed; inset: 0 0 auto 0; height: var(--header-h); z-index: 1000; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 38px; background: var(--navy); color: #fff; }
+  .seaad-logo-link { justify-self: start; display: flex; align-items: center; }
+  .seaad-logo { display: block; height: 38px; width: auto; max-width: 180px; }
+  .header-title { margin: 0; color: #fff; font-size: 32px; font-weight: 700; text-align: center; line-height: 1.2; }
+  .header-links { justify-self: end; display: flex; gap: 24px; align-items: center; }
+  .header-links a { color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+  .header-icon { width: 14px; height: 14px; fill: currentColor; flex: 0 0 auto; }
+  .header-links a:hover { text-decoration: underline; }
+  .sidebar { position: fixed; top: var(--header-h); bottom: 0; left: 0; width: var(--sidebar-w); padding: 28px 22px; border-right: 1px solid #e4e7eb; background: #f7f8fa; overflow-y: auto; }
+  .sidebar-logo { display: block; width: 170px; max-width: 100%; height: auto; margin: 0 auto 28px; }
+  .sidebar nav { display: grid; gap: 8px; }
+  .sidebar nav a { display: block; padding: 10px 12px; border-radius: 6px; color: #17233a; text-decoration: none; font-weight: 700; }
+  .sidebar nav a:hover, .sidebar nav a:focus { background: #e7ebf1; }
+  .page-shell { margin-left: var(--sidebar-w); padding-top: var(--header-h); }
+  main { max-width: 1200px; margin: 0 auto; padding: 30px; }
+  h1 { color: #1a1a1a; margin-bottom: 10px; }
+  .subtitle { margin-bottom: 30px; color: #666; }
+  .section { margin-bottom: 50px; }
+  .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .app-card { border: 1px solid #e0e0e0; border-radius: 10px; padding: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  .app-icon { width: 64px; height: 64px; object-fit: contain; margin-bottom: 12px; }
+  .app-card h3 { margin-top: 0; margin-bottom: 10px; }
+  .links a { margin-right: 15px; text-decoration: none; color: #0066cc; font-weight: 600; }
+  .links a:hover { text-decoration: underline; }
+  .cta { background-color: #f5f7fa; border-radius: 10px; padding: 20px; }
+  .app-card .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .app-card .links a.btn-primary, .app-card .links a.btn-secondary { display: inline-block; padding: 8px 16px; color: #fff; text-decoration: none; border-radius: 4px; text-align: center; transition: background-color .2s ease; }
+  .app-card .links a.btn-primary { background-color: #28a745; }
+  .app-card .links a.btn-primary:hover { background-color: #218838; }
+  .app-card .links a.btn-secondary { background-color: #6666FF; }
+  .app-card .links a.btn-secondary:hover { background-color: #4444FF; }
+  .flex-layout { display: flex; gap: 12px; }
+  .flex-layout > div:nth-child(1) { flex: 1.5; }
+  .flex-layout > div:nth-child(2) { flex: 3; }
+  .flex-layout > div:nth-child(3) { flex: 1.2; }
+  @media (max-width: 850px) {
+    :root { --sidebar-w: 0px; }
+    .site-header { grid-template-columns: auto 1fr; padding: 0 18px; }
+    .header-title { font-size: 17px; }
+    .header-links { display: none; }
+    .sidebar { position: static; width: auto; margin-top: var(--header-h); padding: 14px 18px; border-right: 0; border-bottom: 1px solid #e4e7eb; display: flex; align-items: center; gap: 18px; }
+    .sidebar-logo { width: 92px; margin: 0; }
+    .sidebar nav { display: flex; flex-wrap: wrap; }
+    .page-shell { margin-left: 0; padding-top: 0; }
+    .flex-layout { flex-direction: column; }
+  }
+  </style>
+ </head>
+ <body>
+  <header class="site-header">
+   <a aria-label="Allen Institute" class="seaad-logo-link" href="https://alleninstitute.org/">
+    <img alt="alleninstitute.org" class="seaad-logo" src="icons/allen_institute_logo.svg"/>
+   </a>
+   <div class="header-title">
+    SEA-AD Sandbox
+   </div>
+   <nav aria-label="External resources" class="header-links">
+    <a aria-label="SEA-AD" href="https://brain-map.org/consortia/sea-ad">
+     <img alt="sea-ad.org" class="brain-logo" src="icons/brain.png"/>
+     SEA-AD
+    </a>
+    <a aria-label="Brain Map" href="https://brain-map.org">
+     <img alt="brain-map.org" class="globe-logo" src="icons/globe.png"/>
+     Brain Map
+    </a>
+   </nav>
+  </header>
+  <aside aria-label="Page navigation" class="sidebar">
+   <img alt="SEA-AD Sandbox logo" class="sidebar-logo" src="icons/SEAAD_sandbox_logo.png"/>
+   <nav>
+    <a href="#access-tools" target="_self">
+     <img alt="GitHub" class="code-logo" height="20" src="icons/tools.png" width="20"/>
+     Access the tools
+    </a>
+    <a href="#contribute" target="_self">
+     <img alt="GitHub" class="code-logo" height="20" src="icons/contribute.png" width="20"/>
+     Contribute
+    </a>
+    <a href="https://github.com/AllenInstitute/SEAAD_sandbox" target="_blank">
+     <img alt="GitHub" class="code-logo" height="20" src="icons/code.png" width="20"/>
+     GitHub
+    </a>
+   </nav>
+  </aside>
+  <div class="page-shell">
+   <main>
+    <section id="access-tools">
+     <p class="subtitle">
+      A collection of interactive tools and prototype applications for <a href="https://brain-map.org/consortia/sea-ad/">the Seattle Alzheimer’s Disease Brain Cell Atlas (SEA-AD)</a>. These applications provide access to gene expression, cell type, trajectory, neuropathology, and annotation exploration resources.
+     </p>
+     <div class="section">
+      <div class="app-grid">
 
         <div class="app-card">
             <img src="icons/MTG_viewer_icon.png" alt="MTG Trajectory Viewer" style="max-width: 300px; max-height: 150px;">
@@ -210,10 +193,9 @@ A collection of interactive tools and prototype applications for <a href="https:
 			</div>
         </div>
     </div>
-</div>
-
-<div class="section flex-layout">
-    <div class="column">
+    </div>
+    <section class="section flex-layout" id="contribute">
+      <div class="column">
         <h2>Provide feedback</h2>
         <div class="cta">
             <p>
